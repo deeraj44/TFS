@@ -63,8 +63,12 @@ export default function Hero({ product }) {
 
         <div className="flex items-baseline gap-3 mb-8">
           <span className="text-3xl font-serif font-semibold">₹{product.price}</span>
-          <span className="text-brown/40 line-through text-lg">₹{product.mrp}</span>
-          <span className="text-olive text-sm font-medium">{discountPct}% off</span>
+          {product.mrp > product.price && (
+            <>
+              <span className="text-brown/40 line-through text-lg">₹{product.mrp}</span>
+              <span className="text-olive text-sm font-medium">{discountPct}% off</span>
+            </>
+          )}
         </div>
 
         <div className="flex flex-wrap items-center gap-4 mb-8">
@@ -94,15 +98,37 @@ export default function Hero({ product }) {
           </button>
         </div>
 
-        <a
-          href="https://www.amazon.in/Farmers-Story-Exfoliating-Cleansing-Sandalwood/dp/B0HFDL78QL"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 border border-brown/20 rounded-full px-5 py-2.5 mb-8 text-sm font-medium hover:bg-[#131921] hover:text-white hover:border-[#131921] transition-colors"
-        >
-          <AmazonMark className="w-[74px]" />
-          <span>Buy from Amazon</span>
-        </a>
+        <div className="flex flex-wrap items-center gap-3 mb-8">
+          <a
+            href="https://www.amazon.in/Farmers-Story-Exfoliating-Cleansing-Sandalwood/dp/B0HFDL78QL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-brown/20 rounded-full pl-4 pr-5 py-2.5 text-sm font-medium bg-white shadow-sm hover:shadow-md hover:border-brown/40 hover:-translate-y-0.5 transition-all"
+          >
+            <AmazonMark className="h-5 w-auto" />
+            <span className="text-brown">Buy from Amazon</span>
+          </a>
+
+          <a
+            href="https://wa.me/919619501515"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-brown/20 rounded-full pl-4 pr-5 py-2.5 text-sm font-medium hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-colors"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            WhatsApp Us
+          </a>
+
+          <a
+            href="https://www.instagram.com/the_farmers_story?igsh=Y2UzZ2dvbXdob2Y4&igsi=Y2UzZ2dvbXdob2Y4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-brown/20 rounded-full pl-4 pr-5 py-2.5 text-sm font-medium hover:text-white transition-colors hover:border-transparent hover:[background:radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)]"
+          >
+            <InstagramIcon className="h-5 w-5" />
+            Follow us
+          </a>
+        </div>
 
         <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-brown/60">
           <span className="flex items-center gap-2">
@@ -122,29 +148,53 @@ export default function Hero({ product }) {
   );
 }
 
-// Minimal inline rendering of the "amazon" wordmark + smile arrow,
-// used only as a link icon pointing to the real Amazon listing.
+// Clean inline rendering of the amazon wordmark + smile-arrow, used only
+// as a link icon that points to the brand's real Amazon listing.
 function AmazonMark({ className = '' }) {
   return (
-    <svg viewBox="0 0 130 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg viewBox="0 0 90 32" className={className} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <text
         x="0"
-        y="26"
+        y="20"
         fontFamily="Arial, Helvetica, sans-serif"
         fontWeight="700"
-        fontSize="24"
-        fill="currentColor"
+        fontSize="19"
+        letterSpacing="-0.3"
+        fill="#131921"
       >
         amazon
       </text>
       <path
-        d="M2 32c18 10 46 13 70 6 8-2 17-6 24-11.5 1.6-1.3-.2-3.2-2-2.3-9 4-19 7-29 8-16 1.6-33-1-45-6-1-.4-1.7.8-1 1.8Z"
+        d="M2 24.5c11.5 6.8 34 9 52.5 3.3a63 63 0 0 0 15.8-7.3c1-.6 1.9.5 1 1.3a48 48 0 0 1-15.8 8.6c-14.5 4.6-30.6 2.7-42.3-3.6-1-.5-1.9-1.6-.7-2.2Z"
         fill="#FF9900"
       />
       <path
-        d="M92 24.5c2.6-1.9 6.4-2.9 9-1.9.5 3-1.2 6-3.6 7.7-.6.4-1.2.1-1-.6.7-2 .8-3.4.3-4-.4-.5-1.6-.4-3.6.6-.5.2-.9-.3-.4-.8"
+        d="M67.5 20.2c1.9-.2 6.2-.7 7 .3.8 1-1 5.4-1.8 7.4-.2.6.3.8.8.4 3.4-2.9 4.3-8.8 3.6-9.7-.7-.9-6.5-1.6-10.1.9-.6.4-.1 1 .5 1Z"
         fill="#FF9900"
       />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3A10 10 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Zm0 18.2c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2Z"
+      />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
     </svg>
   );
 }
