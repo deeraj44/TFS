@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-brown font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-serif;
+}
+
+::selection {
+  background-color: #D4A373;
+  color: #4A3525;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brown text-cream px-6 py-3 font-medium tracking-wide transition-colors hover:bg-olive focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-brown/30 text-brown px-6 py-3 font-medium tracking-wide transition-colors hover:bg-brown hover:text-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+}
