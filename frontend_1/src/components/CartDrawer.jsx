@@ -121,11 +121,7 @@ export default function CartDrawer() {
                 <div className="space-y-5">
                   {items.map((item) => (
                     <div key={item.id} className="flex items-center gap-4 border-b border-brown/10 pb-5">
-                      <img
-                        src="/images/hero-product.jpg"
-                        alt={item.name}
-                        className="w-14 h-16 rounded-lg object-cover flex-shrink-0"
-                      />
+                      <div className="w-14 h-16 rounded-lg bg-gradient-to-b from-[#8C6A52] to-[#6B4E37] flex-shrink-0" />
                       <div className="flex-1">
                         <p className="font-medium text-sm">{item.name}</p>
                         <p className="text-brown/50 text-sm">₹{item.price}</p>

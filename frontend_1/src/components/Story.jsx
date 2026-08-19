@@ -25,15 +25,8 @@ export default function Story({ product }) {
       </div>
 
       <div className="relative">
-        <div className="rounded-[2rem] aspect-[4/5] shadow-soft relative overflow-hidden">
-          <img
-            src="/images/gentle-exfoliation.jpg"
-            alt="Close-up of the Instant Glow soap bar showing its exfoliating texture"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brown/80 via-brown/10 to-transparent" />
-          <div className="absolute bottom-0 left-0 p-8 text-cream">
+        <div className="rounded-[2rem] bg-gradient-to-br from-[#8C6A52] to-[#4A3525] aspect-[4/5] shadow-soft flex items-end p-8">
+          <div className="text-cream">
             <p className="text-xs uppercase tracking-[0.2em] mb-2 text-cream/70">Visible results</p>
             <p className="font-serif text-2xl">Smoother, brighter-looking skin in 2 weeks.</p>
           </div>

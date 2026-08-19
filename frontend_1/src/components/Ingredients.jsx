@@ -7,18 +7,9 @@ export default function Ingredients({ product }) {
   return (
     <section id="ingredients" className="bg-white/40 border-y border-brown/10">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-20">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="uppercase tracking-[0.2em] text-xs text-olive font-medium mb-3">The Goodness Within</p>
           <h2 className="text-3xl md:text-4xl font-bold">Nature&apos;s finest ingredients, for your skin</h2>
-        </div>
-
-        <div className="rounded-[2rem] overflow-hidden shadow-soft mb-14 max-w-3xl mx-auto">
-          <img
-            src="/images/ingredients-grid.jpg"
-            alt="Coconut oil, almond oil, Multani Mitti, mulethi powder, walnut scrub powder and Kojic Acid arranged around the Instant Glow soap bar"
-            className="w-full h-auto"
-            loading="lazy"
-          />
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

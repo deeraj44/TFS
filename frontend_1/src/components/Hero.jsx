@@ -30,13 +30,12 @@ export default function Hero({ product }) {
       {/* Visual side */}
       <div className="relative">
         <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-gold/20 to-olive/10 blur-2xl" aria-hidden="true" />
-        <div className="relative rounded-[2rem] bg-white/50 border border-brown/10 p-6 md:p-10 shadow-soft overflow-hidden aspect-square">
-          <img
-            src="/images/hero-product.jpg"
-            alt="Instant Glow Scrubbing Soap box and bar with Kojic Acid serum"
-            className="w-full h-full object-cover rounded-2xl"
-            loading="eager"
-          />
+        <div className="relative rounded-[2rem] bg-white/50 border border-brown/10 p-10 shadow-soft flex items-center justify-center aspect-square">
+          <div className="w-40 h-52 md:w-48 md:h-64 rounded-xl bg-gradient-to-b from-[#8C6A52] to-[#6B4E37] shadow-xl relative flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full border-2 border-cream/70 flex items-center justify-center">
+              <Leaf className="text-cream/80" size={22} />
+            </div>
+          </div>
         </div>
         <span className="absolute top-4 left-4 bg-olive text-cream text-xs font-medium px-3 py-1.5 rounded-full">
           For All Skin Types
