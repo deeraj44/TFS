@@ -12,8 +12,8 @@ const PRODUCT = {
   weight: '100 GM',
   grade: 'Grade 1',
   suitableFor: 'All Skin Types',
-  price: 249,
-  mrp: 349,
+  price: 199,
+  mrp: 199,
   currency: 'INR',
   inStock: true,
   benefits: [
