@@ -23,7 +23,7 @@ export default function Navbar({ onOpenAuth }) {
             <Leaf size={16} className="text-olive" />
           </span>
           <span className="font-serif text-lg tracking-wide">
-            The Farmer&apos;s <span className="italic">Story</span>
+            The Farmer&apos;s Story
           </span>
         </a>
 
