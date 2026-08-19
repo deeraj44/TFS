@@ -94,6 +94,16 @@ export default function Hero({ product }) {
           </button>
         </div>
 
+        <a
+          href="https://www.amazon.in/Farmers-Story-Exfoliating-Cleansing-Sandalwood/dp/B0HFDL78QL"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 border border-brown/20 rounded-full px-5 py-2.5 mb-8 text-sm font-medium hover:bg-[#131921] hover:text-white hover:border-[#131921] transition-colors"
+        >
+          <AmazonMark className="w-[74px]" />
+          <span>Buy from Amazon</span>
+        </a>
+
         <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-brown/60">
           <span className="flex items-center gap-2">
             <Truck size={16} className="text-olive" /> Fast delivery
@@ -109,5 +119,32 @@ export default function Hero({ product }) {
         </div>
       </div>
     </section>
+  );
+}
+
+// Minimal inline rendering of the "amazon" wordmark + smile arrow,
+// used only as a link icon pointing to the real Amazon listing.
+function AmazonMark({ className = '' }) {
+  return (
+    <svg viewBox="0 0 130 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text
+        x="0"
+        y="26"
+        fontFamily="Arial, Helvetica, sans-serif"
+        fontWeight="700"
+        fontSize="24"
+        fill="currentColor"
+      >
+        amazon
+      </text>
+      <path
+        d="M2 32c18 10 46 13 70 6 8-2 17-6 24-11.5 1.6-1.3-.2-3.2-2-2.3-9 4-19 7-29 8-16 1.6-33-1-45-6-1-.4-1.7.8-1 1.8Z"
+        fill="#FF9900"
+      />
+      <path
+        d="M92 24.5c2.6-1.9 6.4-2.9 9-1.9.5 3-1.2 6-3.6 7.7-.6.4-1.2.1-1-.6.7-2 .8-3.4.3-4-.4-.5-1.6-.4-3.6.6-.5.2-.9-.3-.4-.8"
+        fill="#FF9900"
+      />
+    </svg>
   );
 }
